@@ -28,7 +28,7 @@ celery = Celery(app.import_name, broker=app.config['CELERY_BROKER_URL'])
 celery.conf.update(app.config)
 
 # Logging configuration
-logging.basicConfig(filename='messaging_system.log', level=logging.INFO)
+logging.basicConfig(filename='/var/log/messaging_system.log', level=logging.INFO)
 
 @celery.task
 def send_email(recipient):
